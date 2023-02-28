@@ -44,220 +44,232 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  https://auroral.iot.linkeddata.es/def/mobility#hasEstimatedCall
-:hasEstimatedCall rdf:type owl:ObjectProperty ;
-                  rdfs:domain :StopPoint ;
-                  rdfs:range :EstimatedCall ;
-                  rdfs:label "has estimated call" .
+###  http://www.geonames.org/ontology#hasEstimatedCall
+geon:hasEstimatedCall rdf:type owl:ObjectProperty ;
+                      rdfs:domain geon:StopPoint ;
+                      rdfs:range geon:EstimatedCall ;
+                      rdfs:label "has estimated call" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#hasPattern
-:hasPattern rdf:type owl:ObjectProperty ;
-            rdfs:domain :JourneyService ;
-            rdfs:range :JourneyPattern ;
-            rdfs:label "has pattern" .
+###  http://www.geonames.org/ontology#hasPattern
+geon:hasPattern rdf:type owl:ObjectProperty ;
+                rdfs:domain geon:JourneyService ;
+                rdfs:range geon:JourneyPattern ;
+                rdfs:label "has pattern" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#hasQuay
-:hasQuay rdf:type owl:ObjectProperty ;
-         rdfs:domain :EstimatedCall ;
-         rdfs:range :Quay ;
-         rdfs:label "has quay" .
+###  http://www.geonames.org/ontology#hasQuay
+geon:hasQuay rdf:type owl:ObjectProperty ;
+             rdfs:domain geon:EstimatedCall ;
+             rdfs:range geon:Quay ;
+             rdfs:label "has quay" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#hasScheduledTime
-:hasScheduledTime rdf:type owl:ObjectProperty ;
-                  rdfs:domain :EstimatedCall ;
-                  rdfs:range :ScheduledTime ;
-                  rdfs:label "has scheduled time" .
+###  http://www.geonames.org/ontology#hasScheduledTime
+geon:hasScheduledTime rdf:type owl:ObjectProperty ;
+                      rdfs:domain geon:EstimatedCall ;
+                      rdfs:range geon:ScheduledTime ;
+                      rdfs:label "has scheduled time" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#hasTransportMode
-:hasTransportMode rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Line ;
-                  rdfs:range :TransportMode ;
-                  rdfs:label "has transport mode" .
+###  http://www.geonames.org/ontology#hasTransportMode
+geon:hasTransportMode rdf:type owl:ObjectProperty ;
+                      rdfs:domain geon:Line ;
+                      rdfs:range geon:TransportMode ;
+                      rdfs:label "has transport mode" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#hasline
-:hasline rdf:type owl:ObjectProperty ;
-         rdfs:domain :JourneyPattern ;
-         rdfs:label "hasline" .
+###  http://www.geonames.org/ontology#hasline
+geon:hasline rdf:type owl:ObjectProperty ;
+             rdfs:domain geon:JourneyPattern ;
+             rdfs:label "hasline" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#journeyServicel
-:journeyServicel rdf:type owl:ObjectProperty ;
-                 rdfs:domain :EstimatedCall ;
-                 rdfs:range :JourneyService ;
-                 rdfs:label "journey servicel" .
+###  http://www.geonames.org/ontology#journeyServicel
+geon:journeyServicel rdf:type owl:ObjectProperty ;
+                     rdfs:domain geon:EstimatedCall ;
+                     rdfs:range geon:JourneyService ;
+                     rdfs:label "journey servicel" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#prescribing
-:prescribing rdf:type owl:ObjectProperty ;
-             rdfs:domain :EstimatedCall ;
-             rdfs:range :DestinationDisplay ;
-             rdfs:label "prescribing" .
+###  http://www.geonames.org/ontology#prescribing
+geon:prescribing rdf:type owl:ObjectProperty ;
+                 rdfs:domain geon:EstimatedCall ;
+                 rdfs:range geon:DestinationDisplay ;
+                 rdfs:label "prescribing" .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://auroral.iot.linkeddata.es/def/mobility#actualArrivedTime
-:actualArrivedTime rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :ArrivalTime ;
-                   rdfs:range xsd:dateTime ;
-                   rdfs:label "actual arrived time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#actualDepartureTime
-:actualDepartureTime rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :DepartureTime ;
-                     rdfs:range xsd:dateTime ;
-                     rdfs:label "actual departure time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#aimedArrivalTime
-:aimedArrivalTime rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :ArrivalTime ;
-                  rdfs:range xsd:dateTime ;
-                  rdfs:label "aimed arrival time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#aimedDepartureTime
-:aimedDepartureTime rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :DepartureTime ;
-                    rdfs:range xsd:dateTime ;
-                    rdfs:label "aimed departure time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#date
-:date rdf:type owl:DatatypeProperty ;
-      rdfs:domain :EstimatedCall ;
-      rdfs:range xsd:date ;
-      rdfs:label "date" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#expectedArrivalTime
-:expectedArrivalTime rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :ArrivalTime ;
-                     rdfs:range xsd:dateTime ;
-                     rdfs:label "expected arrival time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#expectedDepartureTime
-:expectedDepartureTime rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :DepartureTime ;
+###  http://www.geonames.org/ontology#actualArrivedTime
+geon:actualArrivedTime rdf:type owl:DatatypeProperty ;
+                       rdfs:domain geon:ArrivalTime ;
                        rdfs:range xsd:dateTime ;
-                       rdfs:label "expected departure time" .
+                       rdfs:label "actual arrived time" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#forAlighting
-:forAlighting rdf:type owl:DatatypeProperty ;
-              rdfs:domain :EstimatedCall ;
-              rdfs:range xsd:boolean ;
-              rdfs:label "for alighting" .
+###  http://www.geonames.org/ontology#actualDepartureTime
+geon:actualDepartureTime rdf:type owl:DatatypeProperty ;
+                         rdfs:domain geon:DepartureTime ;
+                         rdfs:range xsd:dateTime ;
+                         rdfs:label "actual departure time" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#forBoarding
-:forBoarding rdf:type owl:DatatypeProperty ;
-             rdfs:domain :EstimatedCall ;
-             rdfs:range xsd:boolean ;
-             rdfs:label "for boarding" .
+###  http://www.geonames.org/ontology#aimedArrivalTime
+geon:aimedArrivalTime rdf:type owl:DatatypeProperty ;
+                      rdfs:domain geon:ArrivalTime ;
+                      rdfs:range xsd:dateTime ;
+                      rdfs:label "aimed arrival time" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#frontText
-:frontText rdf:type owl:DatatypeProperty ;
-           rdfs:domain :DestinationDisplay ;
-           rdfs:range xsd:string ;
-           rdfs:label "front text" .
+###  http://www.geonames.org/ontology#aimedDepartureTime
+geon:aimedDepartureTime rdf:type owl:DatatypeProperty ;
+                        rdfs:domain geon:DepartureTime ;
+                        rdfs:range xsd:dateTime ;
+                        rdfs:label "aimed departure time" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#id
-:id rdf:type owl:DatatypeProperty ;
-    rdfs:domain :StopPoint ;
-    rdfs:range xsd:string ;
-    rdfs:label "id" .
+###  http://www.geonames.org/ontology#date
+geon:date rdf:type owl:DatatypeProperty ;
+          rdfs:domain geon:EstimatedCall ;
+          rdfs:range xsd:date ;
+          rdfs:label "date" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#name
-:name rdf:type owl:DatatypeProperty ;
-      rdfs:domain :StopPoint ;
-      rdfs:range xsd:string ;
-      rdfs:label "name" .
+###  http://www.geonames.org/ontology#expectedArrivalTime
+geon:expectedArrivalTime rdf:type owl:DatatypeProperty ;
+                         rdfs:domain geon:ArrivalTime ;
+                         rdfs:range xsd:dateTime ;
+                         rdfs:label "expected arrival time" .
+
+
+###  http://www.geonames.org/ontology#expectedDepartureTime
+geon:expectedDepartureTime rdf:type owl:DatatypeProperty ;
+                           rdfs:domain geon:DepartureTime ;
+                           rdfs:range xsd:dateTime ;
+                           rdfs:label "expected departure time" .
+
+
+###  http://www.geonames.org/ontology#forAlighting
+geon:forAlighting rdf:type owl:DatatypeProperty ;
+                  rdfs:domain geon:EstimatedCall ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:label "for alighting" .
+
+
+###  http://www.geonames.org/ontology#forBoarding
+geon:forBoarding rdf:type owl:DatatypeProperty ;
+                 rdfs:domain geon:EstimatedCall ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "for boarding" .
+
+
+###  http://www.geonames.org/ontology#frontText
+geon:frontText rdf:type owl:DatatypeProperty ;
+               rdfs:domain geon:DestinationDisplay ;
+               rdfs:range xsd:string ;
+               rdfs:label "front text" .
+
+
+###  http://www.geonames.org/ontology#id
+geon:id rdf:type owl:DatatypeProperty ;
+        rdfs:domain geon:StopPoint ;
+        rdfs:range xsd:string ;
+        rdfs:label "id" .
+
+
+###  http://www.geonames.org/ontology#name
+geon:name rdf:type owl:DatatypeProperty ;
+          rdfs:domain geon:StopPoint ;
+          rdfs:range xsd:string ;
+          rdfs:label "name" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#realTime
+:realTime rdf:type owl:DatatypeProperty ;
+          rdfs:domain geon:EstimatedCall ;
+          rdfs:range xsd:boolean .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#transportMode
+:transportMode rdf:type owl:DatatypeProperty ;
+               rdfs:domain geon:TransportMode ;
+               rdfs:range xsd:string .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://www.geonames.org/ontology#ArrivalTime
+geon:ArrivalTime rdf:type owl:Class ;
+                 rdfs:subClassOf geon:ScheduledTime ;
+                 rdfs:label "Arrival Time" .
+
+
+###  http://www.geonames.org/ontology#DepartureTime
+geon:DepartureTime rdf:type owl:Class ;
+                   rdfs:label "Departure Time" .
+
+
+###  http://www.geonames.org/ontology#DestinationDisplay
+geon:DestinationDisplay rdf:type owl:Class ;
+                        rdfs:label "Destination Display" .
+
+
+###  http://www.geonames.org/ontology#EstimatedCall
+geon:EstimatedCall rdf:type owl:Class ;
+                   rdfs:label "Estimated Call" .
+
+
+###  http://www.geonames.org/ontology#JourneyPattern
+geon:JourneyPattern rdf:type owl:Class ;
+                    rdfs:label "Journey Pattern" .
+
+
+###  http://www.geonames.org/ontology#JourneyService
+geon:JourneyService rdf:type owl:Class ;
+                    rdfs:label "Journey Service" .
+
+
+###  http://www.geonames.org/ontology#Line
+geon:Line rdf:type owl:Class ;
+          rdfs:label "Line" .
+
+
+###  http://www.geonames.org/ontology#Point
+geon:Point rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.owl-ontologies.com/geon#Feature> ;
+           rdfs:label "Point" .
+
+
+###  http://www.geonames.org/ontology#Quay
+geon:Quay rdf:type owl:Class ;
+          rdfs:subClassOf geon:Point ;
+          rdfs:label "Quay" .
+
+
+###  http://www.geonames.org/ontology#ScheduledTime
+geon:ScheduledTime rdf:type owl:Class ;
+                   rdfs:label "Scheduled Time" .
+
+
+###  http://www.geonames.org/ontology#StopPoint
+geon:StopPoint rdf:type owl:Class ;
+               rdfs:subClassOf geon:Point ;
+               rdfs:label "Stop Point" .
+
+
+###  http://www.geonames.org/ontology#TransportMode
+geon:TransportMode rdf:type owl:Class ;
+                   rdfs:label "Transport Mode" .
+
+
 ###  http://www.owl-ontologies.com/geon#Feature
 <http://www.owl-ontologies.com/geon#Feature> rdf:type owl:Class ;
                                              rdfs:label "Feature" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#ArrivalTime
-:ArrivalTime rdf:type owl:Class ;
-             rdfs:subClassOf :ScheduledTime ;
-             rdfs:label "Arrival Time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#DepartureTime
-:DepartureTime rdf:type owl:Class ;
-               rdfs:label "Departure Time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#DestinationDisplay
-:DestinationDisplay rdf:type owl:Class ;
-                    rdfs:label "Destination Display" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#EstimatedCall
-:EstimatedCall rdf:type owl:Class ;
-               rdfs:label "Estimated Call" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#JourneyPattern
-:JourneyPattern rdf:type owl:Class ;
-                rdfs:label "Journey Pattern" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#JourneyService
-:JourneyService rdf:type owl:Class ;
-                rdfs:label "Journey Service" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#Line
-:Line rdf:type owl:Class ;
-      rdfs:label "Line" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#Point
-:Point rdf:type owl:Class ;
-       rdfs:subClassOf <http://www.owl-ontologies.com/geon#Feature> ;
-       rdfs:label "Point" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#Quay
-:Quay rdf:type owl:Class ;
-      rdfs:subClassOf :Point ;
-      rdfs:label "Quay" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#ScheduledTime
-:ScheduledTime rdf:type owl:Class ;
-               rdfs:label "Scheduled Time" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#StopPoint
-:StopPoint rdf:type owl:Class ;
-           rdfs:subClassOf :Point ;
-           rdfs:label "Stop Point" .
-
-
-###  https://auroral.iot.linkeddata.es/def/mobility#TransportMode
-:TransportMode rdf:type owl:Class ;
-               rdfs:label "Transport Mode" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
