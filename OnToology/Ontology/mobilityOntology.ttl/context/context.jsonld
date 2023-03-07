@@ -1,0 +1,140 @@
+{
+  "@context" : {
+    "transportMode" : {
+      "@id" : "http://www.geonames.org/ontology#transportMode",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasline" : {
+      "@id" : "http://www.geonames.org/ontology#hasline",
+      "@type" : "@id"
+    },
+    "DepartureTime" : {
+      "@id" : "http://www.geonames.org/ontology#DepartureTime"
+    },
+    "expectedDepartureTime" : {
+      "@id" : "http://www.geonames.org/ontology#expectedDepartureTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Line" : {
+      "@id" : "http://www.geonames.org/ontology#Line"
+    },
+    "TransportMode" : {
+      "@id" : "http://www.geonames.org/ontology#TransportMode"
+    },
+    "actualArrivedTime" : {
+      "@id" : "http://www.geonames.org/ontology#actualArrivedTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "JourneyPattern" : {
+      "@id" : "http://www.geonames.org/ontology#JourneyPattern"
+    },
+    "expectedArrivalTime" : {
+      "@id" : "http://www.geonames.org/ontology#expectedArrivalTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "prescribing" : {
+      "@id" : "http://www.geonames.org/ontology#prescribing",
+      "@type" : "@id"
+    },
+    "forAlighting" : {
+      "@id" : "http://www.geonames.org/ontology#forAlighting",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "forBoarding" : {
+      "@id" : "http://www.geonames.org/ontology#forBoarding",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "ScheduledTime" : {
+      "@id" : "http://www.geonames.org/ontology#ScheduledTime"
+    },
+    "journeyServicel" : {
+      "@id" : "http://www.geonames.org/ontology#journeyServicel",
+      "@type" : "@id"
+    },
+    "Feature" : {
+      "@id" : "http://www.owl-ontologies.com/geon#Feature"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "actualDepartureTime" : {
+      "@id" : "http://www.geonames.org/ontology#actualDepartureTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "hasScheduledTime" : {
+      "@id" : "http://www.geonames.org/ontology#hasScheduledTime",
+      "@type" : "@id"
+    },
+    "StopPoint" : {
+      "@id" : "http://www.geonames.org/ontology#StopPoint"
+    },
+    "id" : {
+      "@id" : "http://www.geonames.org/ontology#id",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "realTime" : {
+      "@id" : "http://www.geonames.org/ontology#realTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "aimedArrivalTime" : {
+      "@id" : "http://www.geonames.org/ontology#aimedArrivalTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "hasQuay" : {
+      "@id" : "http://www.geonames.org/ontology#hasQuay",
+      "@type" : "@id"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator"
+    },
+    "name" : {
+      "@id" : "http://www.geonames.org/ontology#name",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasEstimatedCall" : {
+      "@id" : "http://www.geonames.org/ontology#hasEstimatedCall",
+      "@type" : "@id"
+    },
+    "aimedDepartureTime" : {
+      "@id" : "http://www.geonames.org/ontology#aimedDepartureTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "EstimatedCall" : {
+      "@id" : "http://www.geonames.org/ontology#EstimatedCall"
+    },
+    "Point" : {
+      "@id" : "http://www.geonames.org/ontology#Point"
+    },
+    "hasTransportMode" : {
+      "@id" : "http://www.geonames.org/ontology#hasTransportMode",
+      "@type" : "@id"
+    },
+    "DestinationDisplay" : {
+      "@id" : "http://www.geonames.org/ontology#DestinationDisplay"
+    },
+    "date" : {
+      "@id" : "http://www.geonames.org/ontology#date",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "JourneyService" : {
+      "@id" : "http://www.geonames.org/ontology#JourneyService"
+    },
+    "ArrivalTime" : {
+      "@id" : "http://www.geonames.org/ontology#ArrivalTime"
+    },
+    "Quay" : {
+      "@id" : "http://www.geonames.org/ontology#Quay"
+    },
+    "hasPattern" : {
+      "@id" : "http://www.geonames.org/ontology#hasPattern",
+      "@type" : "@id"
+    },
+    "frontText" : {
+      "@id" : "http://www.geonames.org/ontology#frontText",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
+    }
+  }
+}

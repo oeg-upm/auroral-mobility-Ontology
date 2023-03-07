@@ -1,0 +1,10 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "geon:Quay" "geon:StopPoint" "geon:ArrivalTime" "geon:Point" "geon:ScheduledTime" "http://www.owl-ontologies.com/geon#Feature" ; /*classes style*/
+	"geon:ArrivalTime" -> "geon:ScheduledTime" [ label = "rdfs:subClassOf" ];
+	"geon:StopPoint" -> "geon:Point" [ label = "rdfs:subClassOf" ];
+	"geon:Point" -> "http://www.owl-ontologies.com/geon#Feature" [ label = "rdfs:subClassOf" ];
+	"geon:Quay" -> "geon:Point" [ label = "rdfs:subClassOf" ];
+
+}

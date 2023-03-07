@@ -1,0 +1,29 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "geon:Quay" "geon:StopPoint" "geon:Line" "geon:JourneyPattern" "geon:TransportMode" "geon:ArrivalTime" "geon:ScheduledTime" "geon:JourneyService" "geon:DestinationDisplay" "geon:DepartureTime" "geon:EstimatedCall" ; /*classes style*/
+	"https://auroral.iot.linkeddata.es/def/mobility#" -> "https://auroral.iot.linkeddata.es/def/mobility#/1.0.0" [ label = "owl:versionIRI" ];
+	"geon:StopPoint" -> "xsd:string" [ label = "geon:id" ];
+	"geon:Line" -> "geon:TransportMode" [ label = "geon:hasTransportMode" ];
+	"geon:StopPoint" -> "xsd:string" [ label = "geon:name" ];
+	"geon:StopPoint" -> "geon:EstimatedCall" [ label = "geon:hasEstimatedCall" ];
+	"geon:TransportMode" -> "xsd:string" [ label = "geon:transportMode" ];
+	"geon:EstimatedCall" -> "xsd:boolean" [ label = "geon:realTime" ];
+	"geon:EstimatedCall" -> "xsd:date" [ label = "geon:date" ];
+	"geon:DepartureTime" -> "xsd:dateTime" [ label = "geon:aimedDepartureTime" ];
+	"geon:EstimatedCall" -> "xsd:boolean" [ label = "geon:forAlighting" ];
+	"geon:ArrivalTime" -> "xsd:dateTime" [ label = "geon:actualArrivedTime" ];
+	"geon:ArrivalTime" -> "xsd:dateTime" [ label = "geon:expectedArrivalTime" ];
+	"geon:JourneyPattern" -> "owl:Thing" [ label = "geon:hasline" ];
+	"geon:EstimatedCall" -> "geon:JourneyService" [ label = "geon:journeyServicel" ];
+	"geon:ArrivalTime" -> "xsd:dateTime" [ label = "geon:aimedArrivalTime" ];
+	"geon:DepartureTime" -> "xsd:dateTime" [ label = "geon:actualDepartureTime" ];
+	"geon:EstimatedCall" -> "geon:DestinationDisplay" [ label = "geon:prescribing" ];
+	"geon:EstimatedCall" -> "xsd:boolean" [ label = "geon:forBoarding" ];
+	"geon:JourneyService" -> "geon:JourneyPattern" [ label = "geon:hasPattern" ];
+	"geon:DepartureTime" -> "xsd:dateTime" [ label = "geon:expectedDepartureTime" ];
+	"geon:EstimatedCall" -> "geon:ScheduledTime" [ label = "geon:hasScheduledTime" ];
+	"geon:EstimatedCall" -> "geon:Quay" [ label = "geon:hasQuay" ];
+	"geon:DestinationDisplay" -> "xsd:string" [ label = "geon:frontText" ];
+
+}
