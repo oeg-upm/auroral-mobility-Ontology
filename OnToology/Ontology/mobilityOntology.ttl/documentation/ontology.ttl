@@ -1,0 +1,270 @@
+@prefix : <https://auroral.iot.linkeddata.es/def/mobility#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://auroral.iot.linkeddata.es/def/mobility#> .
+
+<https://auroral.iot.linkeddata.es/def/mobility#> rdf:type owl:Ontology ;
+                                                   owl:versionIRI <https://auroral.iot.linkeddata.es/def/mobility#/1.0.0> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "Ahlem Rhayem" ,
+                                                                                             "Andrea Cimmino" ,
+                                                                                             "Juan Cano" ,
+                                                                                             "María Poveda Villalón" ,
+                                                                                             "Raúl García Castro" ;
+                                                   <http://purl.org/dc/elements/1.1/description> "The mobility ontology aims to model data related to transportation sector" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.geonames.org/ontology#hasEstimatedCall
+<http://www.geonames.org/ontology#hasEstimatedCall> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.geonames.org/ontology#StopPoint> ;
+                                                    rdfs:range <http://www.geonames.org/ontology#EstimatedCall> ;
+                                                    rdfs:label "has estimated call" .
+
+
+###  http://www.geonames.org/ontology#hasPattern
+<http://www.geonames.org/ontology#hasPattern> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.geonames.org/ontology#JourneyService> ;
+                                              rdfs:range <http://www.geonames.org/ontology#JourneyPattern> ;
+                                              rdfs:label "has pattern" .
+
+
+###  http://www.geonames.org/ontology#hasQuay
+<http://www.geonames.org/ontology#hasQuay> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                           rdfs:range <http://www.geonames.org/ontology#Quay> ;
+                                           rdfs:label "has quay" .
+
+
+###  http://www.geonames.org/ontology#hasScheduledTime
+<http://www.geonames.org/ontology#hasScheduledTime> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                                    rdfs:range <http://www.geonames.org/ontology#ScheduledTime> ;
+                                                    rdfs:label "has scheduled time" .
+
+
+###  http://www.geonames.org/ontology#hasTransportMode
+<http://www.geonames.org/ontology#hasTransportMode> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.geonames.org/ontology#Line> ;
+                                                    rdfs:range <http://www.geonames.org/ontology#TransportMode> ;
+                                                    rdfs:label "has transport mode" .
+
+
+###  http://www.geonames.org/ontology#hasline
+<http://www.geonames.org/ontology#hasline> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.geonames.org/ontology#JourneyPattern> ;
+                                           rdfs:label "hasline" .
+
+
+###  http://www.geonames.org/ontology#journeyServicel
+<http://www.geonames.org/ontology#journeyServicel> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                                   rdfs:range <http://www.geonames.org/ontology#JourneyService> ;
+                                                   rdfs:label "journey servicel" .
+
+
+###  http://www.geonames.org/ontology#prescribing
+<http://www.geonames.org/ontology#prescribing> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                               rdfs:range <http://www.geonames.org/ontology#DestinationDisplay> ;
+                                               rdfs:label "prescribing" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.geonames.org/ontology#actualArrivedTime
+<http://www.geonames.org/ontology#actualArrivedTime> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://www.geonames.org/ontology#ArrivalTime> ;
+                                                     rdfs:range xsd:dateTime ;
+                                                     rdfs:label "actual arrived time" .
+
+
+###  http://www.geonames.org/ontology#actualDepartureTime
+<http://www.geonames.org/ontology#actualDepartureTime> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain <http://www.geonames.org/ontology#DepartureTime> ;
+                                                       rdfs:range xsd:dateTime ;
+                                                       rdfs:label "actual departure time" .
+
+
+###  http://www.geonames.org/ontology#aimedArrivalTime
+<http://www.geonames.org/ontology#aimedArrivalTime> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <http://www.geonames.org/ontology#ArrivalTime> ;
+                                                    rdfs:range xsd:dateTime ;
+                                                    rdfs:label "aimed arrival time" .
+
+
+###  http://www.geonames.org/ontology#aimedDepartureTime
+<http://www.geonames.org/ontology#aimedDepartureTime> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <http://www.geonames.org/ontology#DepartureTime> ;
+                                                      rdfs:range xsd:dateTime ;
+                                                      rdfs:label "aimed departure time" .
+
+
+###  http://www.geonames.org/ontology#date
+<http://www.geonames.org/ontology#date> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                        rdfs:range xsd:date ;
+                                        rdfs:label "date" .
+
+
+###  http://www.geonames.org/ontology#expectedArrivalTime
+<http://www.geonames.org/ontology#expectedArrivalTime> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain <http://www.geonames.org/ontology#ArrivalTime> ;
+                                                       rdfs:range xsd:dateTime ;
+                                                       rdfs:label "expected arrival time" .
+
+
+###  http://www.geonames.org/ontology#expectedDepartureTime
+<http://www.geonames.org/ontology#expectedDepartureTime> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <http://www.geonames.org/ontology#DepartureTime> ;
+                                                         rdfs:range xsd:dateTime ;
+                                                         rdfs:label "expected departure time" .
+
+
+###  http://www.geonames.org/ontology#forAlighting
+<http://www.geonames.org/ontology#forAlighting> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                                rdfs:range xsd:boolean ;
+                                                rdfs:label "for alighting" .
+
+
+###  http://www.geonames.org/ontology#forBoarding
+<http://www.geonames.org/ontology#forBoarding> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                               rdfs:range xsd:boolean ;
+                                               rdfs:label "for boarding" .
+
+
+###  http://www.geonames.org/ontology#frontText
+<http://www.geonames.org/ontology#frontText> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <http://www.geonames.org/ontology#DestinationDisplay> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:label "front text" .
+
+
+###  http://www.geonames.org/ontology#id
+<http://www.geonames.org/ontology#id> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://www.geonames.org/ontology#StopPoint> ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:label "id" .
+
+
+###  http://www.geonames.org/ontology#name
+<http://www.geonames.org/ontology#name> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <http://www.geonames.org/ontology#StopPoint> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:label "name" .
+
+
+###  http://www.geonames.org/ontology#realTime
+<http://www.geonames.org/ontology#realTime> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <http://www.geonames.org/ontology#EstimatedCall> ;
+                                            rdfs:range xsd:boolean .
+
+
+###  http://www.geonames.org/ontology#transportMode
+<http://www.geonames.org/ontology#transportMode> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://www.geonames.org/ontology#TransportMode> ;
+                                                 rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.geonames.org/ontology#ArrivalTime
+<http://www.geonames.org/ontology#ArrivalTime> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.geonames.org/ontology#ScheduledTime> ;
+                                               rdfs:label "Arrival Time" .
+
+
+###  http://www.geonames.org/ontology#DepartureTime
+<http://www.geonames.org/ontology#DepartureTime> rdf:type owl:Class ;
+                                                 rdfs:label "Departure Time" .
+
+
+###  http://www.geonames.org/ontology#DestinationDisplay
+<http://www.geonames.org/ontology#DestinationDisplay> rdf:type owl:Class ;
+                                                      rdfs:label "Destination Display" .
+
+
+###  http://www.geonames.org/ontology#EstimatedCall
+<http://www.geonames.org/ontology#EstimatedCall> rdf:type owl:Class ;
+                                                 rdfs:label "Estimated Call" .
+
+
+###  http://www.geonames.org/ontology#JourneyPattern
+<http://www.geonames.org/ontology#JourneyPattern> rdf:type owl:Class ;
+                                                  rdfs:label "Journey Pattern" .
+
+
+###  http://www.geonames.org/ontology#JourneyService
+<http://www.geonames.org/ontology#JourneyService> rdf:type owl:Class ;
+                                                  rdfs:label "Journey Service" .
+
+
+###  http://www.geonames.org/ontology#Line
+<http://www.geonames.org/ontology#Line> rdf:type owl:Class ;
+                                        rdfs:label "Line" .
+
+
+###  http://www.geonames.org/ontology#Point
+<http://www.geonames.org/ontology#Point> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.owl-ontologies.com/geon#Feature> ;
+                                         rdfs:label "Point" .
+
+
+###  http://www.geonames.org/ontology#Quay
+<http://www.geonames.org/ontology#Quay> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.geonames.org/ontology#Point> ;
+                                        rdfs:label "Quay" .
+
+
+###  http://www.geonames.org/ontology#ScheduledTime
+<http://www.geonames.org/ontology#ScheduledTime> rdf:type owl:Class ;
+                                                 rdfs:label "Scheduled Time" .
+
+
+###  http://www.geonames.org/ontology#StopPoint
+<http://www.geonames.org/ontology#StopPoint> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.geonames.org/ontology#Point> ;
+                                             rdfs:label "Stop Point" .
+
+
+###  http://www.geonames.org/ontology#TransportMode
+<http://www.geonames.org/ontology#TransportMode> rdf:type owl:Class ;
+                                                 rdfs:label "Transport Mode" .
+
+
+###  http://www.owl-ontologies.com/geon#Feature
+<http://www.owl-ontologies.com/geon#Feature> rdf:type owl:Class ;
+                                             rdfs:label "Feature" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
