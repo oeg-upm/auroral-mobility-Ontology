@@ -1,0 +1,297 @@
+@prefix :      <https://auroral.iot.linkeddata.es/def/mobility#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#c355bb7fbf3662e794f52931d4225ab6>
+        a               sh:NodeShape ;
+        rdfs:label      "Journey Pattern" ;
+        sh:name         "Journey Pattern" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/transmodel/journeys#JourneyPattern> .
+
+<https://astrea.linkeddata.es/shapes#a08c05506f45f995454641e7191c68a9>
+        a               sh:NodeShape ;
+        rdfs:label      "Estimated Call" ;
+        sh:name         "Estimated Call" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#832623d8220de65655fde04a9c098808> , <https://astrea.linkeddata.es/shapes#85ca27ee0eb59678ffcb9163383f9d33> , <https://astrea.linkeddata.es/shapes#c1d7604b0638267250b6f252639aaba6> , <https://astrea.linkeddata.es/shapes#05cafc0e0901fc6d28d9f7b2a6ca1128> , <https://astrea.linkeddata.es/shapes#59cf25f120cc304990c8261ec5024a7e> , <https://astrea.linkeddata.es/shapes#4b3435995f57297302f63cbe1a3bb4ee> , <https://astrea.linkeddata.es/shapes#5b54d1941b2d62b99c1720a90d33e77e> ;
+        sh:targetClass  :EstimatedCall .
+
+<https://astrea.linkeddata.es/shapes#85ca27ee0eb59678ffcb9163383f9d33>
+        a            sh:PropertyShape ;
+        rdfs:label   "has scheduled time" ;
+        sh:class     :ScheduledTime ;
+        sh:name      "has scheduled time" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasScheduledTime .
+
+<https://astrea.linkeddata.es/shapes#f19ff397eff36dad7e7bd4617fffec40>
+        a               sh:NodeShape ;
+        rdfs:label      "Scheduled Time" ;
+        sh:name         "Scheduled Time" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :ScheduledTime .
+
+<https://astrea.linkeddata.es/shapes#a9e6dfdf7d8a552918dc31198076428d>
+        a            sh:PropertyShape ;
+        rdfs:label   "aimed departure time" ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "aimed departure time" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :aimedDepartureTime ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c00f69a4fc67b4d39f695754cbf528ca>
+        a               sh:NodeShape ;
+        rdfs:label      "Line" ;
+        sh:name         "Line" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#58fca6654d6394d8827cfd0916535df0> , <https://astrea.linkeddata.es/shapes#715f8cf4ae6ac5fb5aa96d900020c239> , <https://astrea.linkeddata.es/shapes#e3b93cc7512a2c2f9700851784ae5dd0> ;
+        sh:targetClass  <https://w3id.org/transmodel/journeys#Line> .
+
+<https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#59cf25f120cc304990c8261ec5024a7e>
+        a            sh:PropertyShape ;
+        rdfs:label   "destination display" ;
+        sh:class     <https://w3id.org/transmodel/journeys#_DestinationDisplay> ;
+        sh:name      "destination display" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :destinationDisplay .
+
+<https://astrea.linkeddata.es/shapes#715f8cf4ae6ac5fb5aa96d900020c239>
+        a            sh:PropertyShape ;
+        rdfs:label   "id" ;
+        sh:datatype  xsd:string ;
+        sh:name      "id" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :id ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/report/01514577952>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://auroral.iot.linkeddata.es/def/mobility/ontology.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#ec74ec7f20d169e15c410aa2ae5829ba>
+        a            sh:PropertyShape ;
+        rdfs:label   "hasline" ;
+        sh:name      "hasline" ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#93689161fc9ff3fd8ea855426997f211>
+        a            sh:PropertyShape ;
+        rdfs:label   "actual departure time" ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "actual departure time" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :actualDepartureTime ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#e40269ddb7b75110a99f3351753562db>
+        a               sh:NodeShape ;
+        rdfs:label      "Quay" ;
+        sh:name         "Quay" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#715f8cf4ae6ac5fb5aa96d900020c239> ;
+        sh:targetClass  :Quay .
+
+<https://astrea.linkeddata.es/shapes#6c222c502d9b885bef0a419707242b40>
+        a               sh:NodeShape ;
+        rdfs:label      "Journey Service" ;
+        sh:name         "Journey Service" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f54815ff43c25846716304d39f572968> ;
+        sh:targetClass  :JourneyService .
+
+<https://astrea.linkeddata.es/shapes#3728ca5dff12a23194d5d065d26e32ab>
+        a            sh:PropertyShape ;
+        rdfs:label   "actual arrived time" ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "actual arrived time" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :actualArrivedTime ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#09705990bebe3bff6d4f13237540bda9>
+        a               sh:NodeShape ;
+        rdfs:label      "Arrival Time" ;
+        sh:name         "Arrival Time" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#135b3fa0d2d4bda0f39e47ad8be9630b> , <https://astrea.linkeddata.es/shapes#3728ca5dff12a23194d5d065d26e32ab> , <https://astrea.linkeddata.es/shapes#b892d1e117c177feec5e98d9b90eeae7> ;
+        sh:targetClass  :ArrivalTime .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#f36821fd91d8cf11430c524b7312a2a1> , <https://astrea.linkeddata.es/shapes#5b54d1941b2d62b99c1720a90d33e77e> , <https://astrea.linkeddata.es/shapes#b892d1e117c177feec5e98d9b90eeae7> , <https://astrea.linkeddata.es/shapes#cbfd6ac4575eae205068ce7a439b5dff> , <https://astrea.linkeddata.es/shapes#58fca6654d6394d8827cfd0916535df0> , <https://astrea.linkeddata.es/shapes#05cafc0e0901fc6d28d9f7b2a6ca1128> , <https://astrea.linkeddata.es/shapes#e9a659ff027197f8c9bc1af97d05c4e2> , <https://astrea.linkeddata.es/shapes#c1d7604b0638267250b6f252639aaba6> , <https://astrea.linkeddata.es/shapes#ec74ec7f20d169e15c410aa2ae5829ba> , <https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca> , <https://astrea.linkeddata.es/shapes#3728ca5dff12a23194d5d065d26e32ab> , <https://astrea.linkeddata.es/shapes#e3b93cc7512a2c2f9700851784ae5dd0> , <https://astrea.linkeddata.es/shapes#e40269ddb7b75110a99f3351753562db> , <https://astrea.linkeddata.es/shapes#a9e6dfdf7d8a552918dc31198076428d> , <https://astrea.linkeddata.es/shapes#135b3fa0d2d4bda0f39e47ad8be9630b> , <https://astrea.linkeddata.es/shapes#0954f6e5888aa84ffc37b3a4c7d2097b> , <https://astrea.linkeddata.es/shapes#78f38326b4a408a0dd150c0a82f4e958> , <https://astrea.linkeddata.es/shapes#09705990bebe3bff6d4f13237540bda9> , <https://astrea.linkeddata.es/shapes#715f8cf4ae6ac5fb5aa96d900020c239> , <https://astrea.linkeddata.es/shapes#f54815ff43c25846716304d39f572968> , <https://astrea.linkeddata.es/shapes#832623d8220de65655fde04a9c098808> , <https://astrea.linkeddata.es/shapes#85ca27ee0eb59678ffcb9163383f9d33> , <https://astrea.linkeddata.es/shapes#93689161fc9ff3fd8ea855426997f211> , <https://astrea.linkeddata.es/shapes#c00f69a4fc67b4d39f695754cbf528ca> , <https://astrea.linkeddata.es/shapes#f19ff397eff36dad7e7bd4617fffec40> , <https://astrea.linkeddata.es/shapes#8daf17d52b0a5a05d8d39f57f9e2a4ff> , <https://astrea.linkeddata.es/shapes#b244289dbf3420b5b62f4848626931a2> , <https://astrea.linkeddata.es/shapes#a08c05506f45f995454641e7191c68a9> , <https://astrea.linkeddata.es/shapes#c355bb7fbf3662e794f52931d4225ab6> , <https://astrea.linkeddata.es/shapes#59cf25f120cc304990c8261ec5024a7e> , <https://astrea.linkeddata.es/shapes#bd61c25816a37790c82daecb4562497e> , <https://astrea.linkeddata.es/shapes#6c222c502d9b885bef0a419707242b40> , <https://astrea.linkeddata.es/shapes#4b3435995f57297302f63cbe1a3bb4ee> , <https://astrea.linkeddata.es/shapes#6ddc0b40525de8d44aa81deabedaa0bf> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/01514577952> .
+
+<https://astrea.linkeddata.es/shapes#58fca6654d6394d8827cfd0916535df0>
+        a            sh:PropertyShape ;
+        rdfs:label   "has transport mode" ;
+        sh:class     <https://w3id.org/transmodel/journeys#MeanOfTransport> ;
+        sh:name      "has transport mode" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasTransportMode .
+
+<https://astrea.linkeddata.es/shapes#c1d7604b0638267250b6f252639aaba6>
+        a            sh:PropertyShape ;
+        rdfs:label   "for alighting" ;
+        sh:datatype  xsd:boolean ;
+        sh:name      "for alighting" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :forAlighting ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#b244289dbf3420b5b62f4848626931a2>
+        a            sh:PropertyShape ;
+        rdfs:label   "expected departure time" ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "expected departure time" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :expectedDepartureTime ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#8daf17d52b0a5a05d8d39f57f9e2a4ff>
+        a               sh:NodeShape ;
+        rdfs:label      "Stop Point" ;
+        sh:name         "Stop Point" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e9a659ff027197f8c9bc1af97d05c4e2> , <https://astrea.linkeddata.es/shapes#715f8cf4ae6ac5fb5aa96d900020c239> , <https://astrea.linkeddata.es/shapes#e3b93cc7512a2c2f9700851784ae5dd0> ;
+        sh:targetClass  :StopPoint .
+
+<https://astrea.linkeddata.es/shapes#5b54d1941b2d62b99c1720a90d33e77e>
+        a            sh:PropertyShape ;
+        rdfs:label   "has quay" ;
+        sh:class     :Quay ;
+        sh:name      "has quay" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasQuay .
+
+<https://astrea.linkeddata.es/shapes#b892d1e117c177feec5e98d9b90eeae7>
+        a            sh:PropertyShape ;
+        rdfs:label   "expected arrival time" ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "expected arrival time" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :expectedArrivalTime ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#bd61c25816a37790c82daecb4562497e>
+        a               sh:NodeShape ;
+        rdfs:label      "Point" ;
+        sh:name         "Point" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/transmodel/journeys#Point> .
+
+<https://astrea.linkeddata.es/shapes#4b3435995f57297302f63cbe1a3bb4ee>
+        a            sh:PropertyShape ;
+        rdfs:label   "date" ;
+        sh:datatype  xsd:date ;
+        sh:name      "date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :date ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#e3b93cc7512a2c2f9700851784ae5dd0>
+        a            sh:PropertyShape ;
+        rdfs:label   "name" ;
+        sh:datatype  xsd:string ;
+        sh:name      "name" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :name ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#f36821fd91d8cf11430c524b7312a2a1>
+        a            sh:PropertyShape ;
+        rdfs:label   "front text" ;
+        sh:datatype  xsd:string ;
+        sh:name      "front text" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.owl-ontologies.com/tmjourney#frontText> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#0954f6e5888aa84ffc37b3a4c7d2097b>
+        a               sh:NodeShape ;
+        rdfs:label      "Mean Of Transport" ;
+        sh:name         "Mean Of Transport" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+<https://astrea.linkeddata.es/shapes#6ddc0b40525de8d44aa81deabedaa0bf>
+        a               sh:NodeShape ;
+        rdfs:label      "Feature" ;
+        sh:name         "Feature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.geonames.org/ontology#Feature> .
+
+<https://astrea.linkeddata.es/shapes#cbfd6ac4575eae205068ce7a439b5dff>
+        a               sh:NodeShape ;
+        rdfs:label      "Departure Time" ;
+        sh:name         "Departure Time" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b244289dbf3420b5b62f4848626931a2> , <https://astrea.linkeddata.es/shapes#a9e6dfdf7d8a552918dc31198076428d> , <https://astrea.linkeddata.es/shapes#93689161fc9ff3fd8ea855426997f211> ;
+        sh:targetClass  :DepartureTime .
+
+<https://astrea.linkeddata.es/shapes#135b3fa0d2d4bda0f39e47ad8be9630b>
+        a            sh:PropertyShape ;
+        rdfs:label   "aimed arrival time" ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "aimed arrival time" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :aimedArrivalTime ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#05cafc0e0901fc6d28d9f7b2a6ca1128>
+        a            sh:PropertyShape ;
+        rdfs:label   "journey service" ;
+        sh:class     :JourneyService ;
+        sh:name      "journey service" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :journeyService .
+
+<https://astrea.linkeddata.es/shapes#e9a659ff027197f8c9bc1af97d05c4e2>
+        a            sh:PropertyShape ;
+        rdfs:label   "has estimated call" ;
+        sh:class     :EstimatedCall ;
+        sh:name      "has estimated call" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasEstimatedCall .
+
+<https://astrea.linkeddata.es/shapes#f54815ff43c25846716304d39f572968>
+        a            sh:PropertyShape ;
+        rdfs:label   "journey pattern" ;
+        sh:class     <https://w3id.org/transmodel/journeys#JourneyPattern> ;
+        sh:name      "journey pattern" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :journeyPattern .
+
+<https://astrea.linkeddata.es/shapes#832623d8220de65655fde04a9c098808>
+        a            sh:PropertyShape ;
+        rdfs:label   "for boarding" ;
+        sh:datatype  xsd:boolean ;
+        sh:name      "for boarding" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :forBoarding ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#78f38326b4a408a0dd150c0a82f4e958>
+        a               sh:NodeShape ;
+        rdfs:label      "Destination Display" ;
+        sh:name         "Destination Display" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f36821fd91d8cf11430c524b7312a2a1> ;
+        sh:targetClass  <https://w3id.org/transmodel/journeys#_DestinationDisplay> .
