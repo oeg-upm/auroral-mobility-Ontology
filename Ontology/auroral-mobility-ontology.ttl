@@ -18,7 +18,8 @@
                                                               "Juan Cano Benito" ,
                                                               "María Poveda Villalón" ,
                                                               "Raúl García Castro" ;
-                                                   dc:description "Ontology code created by Chowlk" .
+                                                   dc:description "The mobility ontology aims to model data related to transportation sector" ;
+                                                   dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> .
 
 #################################################################
 #    Annotation properties
@@ -30,6 +31,10 @@ dc:creator rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/elements/1.1/description
 dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -47,7 +52,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://auroral.iot.linkeddata.es/def/mobility#destinationDisplay
 mob:destinationDisplay rdf:type owl:ObjectProperty ;
                        rdfs:domain mob:EstimatedCall ;
-                       rdfs:range tmjourney:_DestinationDisplay ;
+                       rdfs:range tmjourney:DestinationDisplay ;
                        rdfs:label "destination display" .
 
 
@@ -56,6 +61,12 @@ mob:hasEstimatedCall rdf:type owl:ObjectProperty ;
                      rdfs:domain mob:StopPoint ;
                      rdfs:range mob:EstimatedCall ;
                      rdfs:label "has estimated call" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#hasLine
+mob:hasLine rdf:type owl:ObjectProperty ;
+            rdfs:domain tmjourney:JourneyPattern ;
+            rdfs:label "hasline" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#hasQuay
@@ -79,12 +90,6 @@ mob:hasTransportMode rdf:type owl:ObjectProperty ;
                      rdfs:label "has transport mode" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#hasline
-mob:hasline rdf:type owl:ObjectProperty ;
-            rdfs:domain tmjourney:JourneyPattern ;
-            rdfs:label "hasline" .
-
-
 ###  https://auroral.iot.linkeddata.es/def/mobility#journeyPattern
 mob:journeyPattern rdf:type owl:ObjectProperty ;
                    rdfs:domain mob:JourneyService ;
@@ -105,7 +110,7 @@ mob:journeyService rdf:type owl:ObjectProperty ;
 
 ###  http://www.owl-ontologies.com/tmjourney#frontText
 <http://www.owl-ontologies.com/tmjourney#frontText> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain tmjourney:_DestinationDisplay ;
+                                                    rdfs:domain tmjourney:DestinationDisplay ;
                                                     rdfs:range xsd:string ;
                                                     rdfs:label "front text" .
 
@@ -175,17 +180,12 @@ mob:forBoarding rdf:type owl:DatatypeProperty ;
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#id
 mob:id rdf:type owl:DatatypeProperty ;
-       rdfs:domain mob:Quay ,
-                   mob:StopPoint ,
-                   tmjourney:Line ;
        rdfs:range xsd:string ;
        rdfs:label "id" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#name
 mob:name rdf:type owl:DatatypeProperty ;
-         rdfs:domain mob:StopPoint ,
-                     tmjourney:Line ;
          rdfs:range xsd:string ;
          rdfs:label "name" .
 
@@ -238,6 +238,11 @@ mob:StopPoint rdf:type owl:Class ;
               rdfs:label "Stop Point" .
 
 
+###  https://w3id.org/transmodel/journeys#DestinationDisplay
+tmjourney:DestinationDisplay rdf:type owl:Class ;
+                             rdfs:label "Destination Display" .
+
+
 ###  https://w3id.org/transmodel/journeys#JourneyPattern
 tmjourney:JourneyPattern rdf:type owl:Class ;
                          rdfs:label "Journey Pattern" .
@@ -257,11 +262,6 @@ tmjourney:MeanOfTransport rdf:type owl:Class ;
 tmjourney:Point rdf:type owl:Class ;
                 rdfs:subClassOf geon:Feature ;
                 rdfs:label "Point" .
-
-
-###  https://w3id.org/transmodel/journeys#_DestinationDisplay
-tmjourney:_DestinationDisplay rdf:type owl:Class ;
-                              rdfs:label "Destination Display" .
 
 
 #################################################################
