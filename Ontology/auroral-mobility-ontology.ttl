@@ -1,25 +1,25 @@
 @prefix : <https://auroral.iot.linkeddata.es/def/mobility#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix mob: <https://auroral.iot.linkeddata.es/def/mobility#> .
+@prefix mod: <https://w3id.org/mod#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix geon: <http://www.geonames.org/ontology#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix tmjourney: <https://w3id.org/transmodel/journeys#> .
 @base <https://auroral.iot.linkeddata.es/def/mobility#> .
 
 <https://auroral.iot.linkeddata.es/def/mobility#> rdf:type owl:Ontology ;
                                                    dc:creator "Ahlem Rhayem" ,
-                                                              "Andrea Cimmino" ,
-                                                              "Juan Cano Benito" ,
                                                               "María Poveda Villalón" ,
                                                               "Raúl García Castro" ;
-                                                   dc:description "The mobility ontology aims to model data related to transportation sector" ;
-                                                   dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+                                                   dc:description "This ontology aims at modelling the data related mean of transport mobility  for the AURORAL project." ;
+                                                   dc:title "The AURORAL Mobility Ontology" ;
+                                                   <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                                                   owl:versionInfo "0.0.1" ;
+                                                   mod:createdWith <https://chowlk.linkeddata.es/> .
 
 #################################################################
 #    Annotation properties
@@ -33,8 +33,20 @@ dc:creator rdf:type owl:AnnotationProperty .
 dc:description rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/mod#createdWith
+mod:createdWith rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -66,7 +78,8 @@ mob:hasEstimatedCall rdf:type owl:ObjectProperty ;
 ###  https://auroral.iot.linkeddata.es/def/mobility#hasLine
 mob:hasLine rdf:type owl:ObjectProperty ;
             rdfs:domain tmjourney:JourneyPattern ;
-            rdfs:label "hasline" .
+            rdfs:range tmjourney:Line ;
+            rdfs:label "has line" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#hasQuay
@@ -107,13 +120,6 @@ mob:journeyService rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://www.owl-ontologies.com/tmjourney#frontText
-<http://www.owl-ontologies.com/tmjourney#frontText> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain tmjourney:DestinationDisplay ;
-                                                    rdfs:range xsd:string ;
-                                                    rdfs:label "front text" .
-
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#actualArrivedTime
 mob:actualArrivedTime rdf:type owl:DatatypeProperty ;
@@ -178,16 +184,46 @@ mob:forBoarding rdf:type owl:DatatypeProperty ;
                 rdfs:label "for boarding" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#id
-mob:id rdf:type owl:DatatypeProperty ;
-       rdfs:range xsd:string ;
-       rdfs:label "id" .
+###  https://auroral.iot.linkeddata.es/def/mobility#idLine
+mob:idLine rdf:type owl:DatatypeProperty ;
+           rdfs:domain tmjourney:Line ;
+           rdfs:range xsd:string ;
+           rdfs:label "id line" .
 
 
-###  https://auroral.iot.linkeddata.es/def/mobility#name
-mob:name rdf:type owl:DatatypeProperty ;
-         rdfs:range xsd:string ;
-         rdfs:label "name" .
+###  https://auroral.iot.linkeddata.es/def/mobility#idQuay
+mob:idQuay rdf:type owl:DatatypeProperty ;
+           rdfs:domain mob:Quay ;
+           rdfs:range xsd:string ;
+           rdfs:label "id quay" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#idStopPoint
+mob:idStopPoint rdf:type owl:DatatypeProperty ;
+                rdfs:domain mob:StopPoint ;
+                rdfs:range xsd:string ;
+                rdfs:label "id stop point" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#nameLine
+mob:nameLine rdf:type owl:DatatypeProperty ;
+             rdfs:domain tmjourney:Line ;
+             rdfs:range xsd:string ;
+             rdfs:label "name line" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#nameStopPoint
+mob:nameStopPoint rdf:type owl:DatatypeProperty ;
+                  rdfs:domain mob:StopPoint ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "name stop point" .
+
+
+###  https://w3id.org/transmodel/journeys#frontText
+tmjourney:frontText rdf:type owl:DatatypeProperty ;
+                    rdfs:domain tmjourney:DestinationDisplay ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "front text" .
 
 
 #################################################################
