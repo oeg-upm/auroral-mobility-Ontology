@@ -65,6 +65,7 @@ xsd:date rdf:type rdfs:Datatype .
 mob:destinationDisplay rdf:type owl:ObjectProperty ;
                        rdfs:domain mob:EstimatedCall ;
                        rdfs:range tmjourney:DestinationDisplay ;
+                       rdfs:comment "Relationship between the estimated call and the destination" ;
                        rdfs:label "destination display" .
 
 
@@ -72,6 +73,7 @@ mob:destinationDisplay rdf:type owl:ObjectProperty ;
 mob:hasEstimatedCall rdf:type owl:ObjectProperty ;
                      rdfs:domain mob:StopPoint ;
                      rdfs:range mob:EstimatedCall ;
+                     rdfs:comment "Relationship between the stop point and its estimade calls" ;
                      rdfs:label "has estimated call" .
 
 
@@ -79,6 +81,7 @@ mob:hasEstimatedCall rdf:type owl:ObjectProperty ;
 mob:hasLine rdf:type owl:ObjectProperty ;
             rdfs:domain tmjourney:JourneyPattern ;
             rdfs:range tmjourney:Line ;
+            rdfs:comment "Relationship between journey pattern and the line" ;
             rdfs:label "has line" .
 
 
@@ -86,6 +89,7 @@ mob:hasLine rdf:type owl:ObjectProperty ;
 mob:hasQuay rdf:type owl:ObjectProperty ;
             rdfs:domain mob:EstimatedCall ;
             rdfs:range mob:Quay ;
+            rdfs:comment "Relationship between the estimated call and the quay" ;
             rdfs:label "has quay" .
 
 
@@ -93,6 +97,7 @@ mob:hasQuay rdf:type owl:ObjectProperty ;
 mob:hasScheduledTime rdf:type owl:ObjectProperty ;
                      rdfs:domain mob:EstimatedCall ;
                      rdfs:range mob:ScheduledTime ;
+                     rdfs:comment "Relationship between the scheduled time and the estimated call" ;
                      rdfs:label "has scheduled time" .
 
 
@@ -100,6 +105,7 @@ mob:hasScheduledTime rdf:type owl:ObjectProperty ;
 mob:hasTransportMode rdf:type owl:ObjectProperty ;
                      rdfs:domain tmjourney:Line ;
                      rdfs:range tmjourney:MeanOfTransport ;
+                     rdfs:comment "Relationship between the mean of transport and the line" ;
                      rdfs:label "has transport mode" .
 
 
@@ -107,6 +113,7 @@ mob:hasTransportMode rdf:type owl:ObjectProperty ;
 mob:journeyPattern rdf:type owl:ObjectProperty ;
                    rdfs:domain mob:JourneyService ;
                    rdfs:range tmjourney:JourneyPattern ;
+                   rdfs:comment "Relationship between the  journey service and the journey pattern" ;
                    rdfs:label "journey pattern" .
 
 
@@ -114,6 +121,7 @@ mob:journeyPattern rdf:type owl:ObjectProperty ;
 mob:journeyService rdf:type owl:ObjectProperty ;
                    rdfs:domain mob:EstimatedCall ;
                    rdfs:range mob:JourneyService ;
+                   rdfs:comment "Relationship between the journey service and the estimated calls" ;
                    rdfs:label "journey service" .
 
 
@@ -125,6 +133,7 @@ mob:journeyService rdf:type owl:ObjectProperty ;
 mob:actualArrivedTime rdf:type owl:DatatypeProperty ;
                       rdfs:domain mob:ArrivalTime ;
                       rdfs:range xsd:dateTime ;
+                      rdfs:comment "The actual arrived time of a mean of transport" ;
                       rdfs:label "actual arrived time" .
 
 
@@ -132,6 +141,7 @@ mob:actualArrivedTime rdf:type owl:DatatypeProperty ;
 mob:actualDepartureTime rdf:type owl:DatatypeProperty ;
                         rdfs:domain mob:DepartureTime ;
                         rdfs:range xsd:dateTime ;
+                        rdfs:comment "The actual departure time of a mean of transport" ;
                         rdfs:label "actual departure time" .
 
 
@@ -139,6 +149,7 @@ mob:actualDepartureTime rdf:type owl:DatatypeProperty ;
 mob:aimedArrivalTime rdf:type owl:DatatypeProperty ;
                      rdfs:domain mob:ArrivalTime ;
                      rdfs:range xsd:dateTime ;
+                     rdfs:comment "The aimed arrival time of a mean of transport" ;
                      rdfs:label "aimed arrival time" .
 
 
@@ -146,6 +157,7 @@ mob:aimedArrivalTime rdf:type owl:DatatypeProperty ;
 mob:aimedDepartureTime rdf:type owl:DatatypeProperty ;
                        rdfs:domain mob:DepartureTime ;
                        rdfs:range xsd:dateTime ;
+                       rdfs:comment "The aimde departure time of a mean of transport" ;
                        rdfs:label "aimed departure time" .
 
 
@@ -153,6 +165,7 @@ mob:aimedDepartureTime rdf:type owl:DatatypeProperty ;
 mob:date rdf:type owl:DatatypeProperty ;
          rdfs:domain mob:EstimatedCall ;
          rdfs:range xsd:date ;
+         rdfs:comment "The date of the estimated call" ;
          rdfs:label "date" .
 
 
@@ -160,6 +173,7 @@ mob:date rdf:type owl:DatatypeProperty ;
 mob:expectedArrivalTime rdf:type owl:DatatypeProperty ;
                         rdfs:domain mob:ArrivalTime ;
                         rdfs:range xsd:dateTime ;
+                        rdfs:comment "The expected arrival time of a given mean of transport to a stop point" ;
                         rdfs:label "expected arrival time" .
 
 
@@ -167,6 +181,7 @@ mob:expectedArrivalTime rdf:type owl:DatatypeProperty ;
 mob:expectedDepartureTime rdf:type owl:DatatypeProperty ;
                           rdfs:domain mob:DepartureTime ;
                           rdfs:range xsd:dateTime ;
+                          rdfs:comment "The expected departure time of a given mean of transport to a stop point" ;
                           rdfs:label "expected departure time" .
 
 
@@ -174,6 +189,7 @@ mob:expectedDepartureTime rdf:type owl:DatatypeProperty ;
 mob:forAlighting rdf:type owl:DatatypeProperty ;
                  rdfs:domain mob:EstimatedCall ;
                  rdfs:range xsd:boolean ;
+                 rdfs:comment "To dismount from a horse, descend from a vehicle, etc. to settle or stay after descending:" ;
                  rdfs:label "for alighting" .
 
 
@@ -181,6 +197,7 @@ mob:forAlighting rdf:type owl:DatatypeProperty ;
 mob:forBoarding rdf:type owl:DatatypeProperty ;
                 rdfs:domain mob:EstimatedCall ;
                 rdfs:range xsd:boolean ;
+                rdfs:comment "The act of passengers and crew getting aboard a ship or aircraft" ;
                 rdfs:label "for boarding" .
 
 
@@ -188,6 +205,7 @@ mob:forBoarding rdf:type owl:DatatypeProperty ;
 mob:idLine rdf:type owl:DatatypeProperty ;
            rdfs:domain tmjourney:Line ;
            rdfs:range xsd:string ;
+           rdfs:comment "The identifier of a line" ;
            rdfs:label "id line" .
 
 
@@ -195,6 +213,7 @@ mob:idLine rdf:type owl:DatatypeProperty ;
 mob:idQuay rdf:type owl:DatatypeProperty ;
            rdfs:domain mob:Quay ;
            rdfs:range xsd:string ;
+           rdfs:comment "The identifier of a quay" ;
            rdfs:label "id quay" .
 
 
@@ -202,6 +221,7 @@ mob:idQuay rdf:type owl:DatatypeProperty ;
 mob:idStopPoint rdf:type owl:DatatypeProperty ;
                 rdfs:domain mob:StopPoint ;
                 rdfs:range xsd:string ;
+                rdfs:comment "The identifier of a stop point" ;
                 rdfs:label "id stop point" .
 
 
@@ -209,6 +229,7 @@ mob:idStopPoint rdf:type owl:DatatypeProperty ;
 mob:nameLine rdf:type owl:DatatypeProperty ;
              rdfs:domain tmjourney:Line ;
              rdfs:range xsd:string ;
+             rdfs:comment "The name of a line" ;
              rdfs:label "name line" .
 
 
@@ -216,6 +237,7 @@ mob:nameLine rdf:type owl:DatatypeProperty ;
 mob:nameStopPoint rdf:type owl:DatatypeProperty ;
                   rdfs:domain mob:StopPoint ;
                   rdfs:range xsd:string ;
+                  rdfs:comment "The name of a stop point" ;
                   rdfs:label "name stop point" .
 
 
@@ -223,6 +245,7 @@ mob:nameStopPoint rdf:type owl:DatatypeProperty ;
 tmjourney:frontText rdf:type owl:DatatypeProperty ;
                     rdfs:domain tmjourney:DestinationDisplay ;
                     rdfs:range xsd:string ;
+                    rdfs:comment "The act of acting like you are somebody else" ;
                     rdfs:label "front text" .
 
 
@@ -232,71 +255,97 @@ tmjourney:frontText rdf:type owl:DatatypeProperty ;
 
 ###  http://www.geonames.org/ontology#Feature
 geon:Feature rdf:type owl:Class ;
+             rdfs:comment "Refers to a specific location" ;
              rdfs:label "Feature" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#ArrivalTime
 mob:ArrivalTime rdf:type owl:Class ;
                 rdfs:subClassOf mob:ScheduledTime ;
+                rdfs:comment "Represents the scheduled arrival time for a stop point" ;
                 rdfs:label "Arrival Time" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#DepartureTime
 mob:DepartureTime rdf:type owl:Class ;
                   rdfs:subClassOf mob:ScheduledTime ;
+                  rdfs:comment "Represents the scheduled departure time for a stop point" ;
                   rdfs:label "Departure Time" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#EstimatedCall
 mob:EstimatedCall rdf:type owl:Class ;
+                  rdfs:comment "This class defines the estimated call of a bus or any mean of transport in a specific stop point" ;
                   rdfs:label "Estimated Call" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#JourneyService
 mob:JourneyService rdf:type owl:Class ;
+                   rdfs:comment """A passenger carrying Mean Of Transport JOURNEY for one specified
+DAY TYPE. The pattern of working is in principle defined by a
+SERVICE JOURNEY PATTERN.""" ;
                    rdfs:label "Journey Service" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#Quay
 mob:Quay rdf:type owl:Class ;
          rdfs:subClassOf tmjourney:Point ;
+         rdfs:comment """A place such as platform, stance, or quayside where
+passengers have access to PT vehicles, Taxi, cars or other
+means of transportation. A QUAY may serve one or more
+VEHICLE STOPPING PLACEs and be associated with one or
+more SCHEDULED STOP POINTS. A QUAY may contain other
+sub QUAYs.""" ;
          rdfs:label "Quay" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#ScheduledTime
 mob:ScheduledTime rdf:type owl:Class ;
+                  rdfs:comment "Defines the scheduled time for a Stop point" ;
                   rdfs:label "Scheduled Time" .
 
 
 ###  https://auroral.iot.linkeddata.es/def/mobility#StopPoint
 mob:StopPoint rdf:type owl:Class ;
               rdfs:subClassOf tmjourney:Point ;
+              rdfs:comment "A POINT where passengers can board or alight from mean of transport" ;
               rdfs:label "Stop Point" .
 
 
 ###  https://w3id.org/transmodel/journeys#DestinationDisplay
 tmjourney:DestinationDisplay rdf:type owl:Class ;
+                             rdfs:comment "An advertised destination of a specific Journey Pattern usually displayed on a headsign or other on-board locations" ;
                              rdfs:label "Destination Display" .
 
 
 ###  https://w3id.org/transmodel/journeys#JourneyPattern
 tmjourney:JourneyPattern rdf:type owl:Class ;
+                         rdfs:comment """An ordered list of SCHEDULED STOP POINTs and TIMING
+POINTs on a single ROUTE, describing the pattern of working
+for public transport vehicles.A JOURNEY PATTERN may pass
+through the same POINT more than once. The first point of a
+JOURNEY PATTERN is the origin. The last point is the
+destination""" ;
                          rdfs:label "Journey Pattern" .
 
 
 ###  https://w3id.org/transmodel/journeys#Line
 tmjourney:Line rdf:type owl:Class ;
+               rdfs:comment """A group of ROUTEs which is generally known to the public by
+a similar name or number.""" ;
                rdfs:label "Line" .
 
 
 ###  https://w3id.org/transmodel/journeys#MeanOfTransport
 tmjourney:MeanOfTransport rdf:type owl:Class ;
+                          rdfs:comment "The means of transportation are bus, train, aeroplane, ship, car, etc while the mode of transportation refers to road, air, sea/ocean, etc." ;
                           rdfs:label "Mean Of Transport" .
 
 
 ###  https://w3id.org/transmodel/journeys#Point
 tmjourney:Point rdf:type owl:Class ;
                 rdfs:subClassOf geon:Feature ;
+                rdfs:comment "Presents the geospatial coordination of a given place" ;
                 rdfs:label "Point" .
 
 
