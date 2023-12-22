@@ -1,0 +1,391 @@
+@prefix : <https://auroral.iot.linkeddata.es/def/mobility#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://auroral.iot.linkeddata.es/def/mobility#> .
+
+<https://auroral.iot.linkeddata.es/def/mobility#> rdf:type owl:Ontology ;
+                                                   <http://purl.org/dc/elements/1.1/creator> "Ahlem Rhayem" ,
+                                                                                             "María Poveda Villalón" ,
+                                                                                             "Raúl García Castro" ;
+                                                   <http://purl.org/dc/elements/1.1/description> "This ontology aims at modelling the data related mean of transport mobility  for the AURORAL project." ;
+                                                   <http://purl.org/dc/elements/1.1/title> "The AURORAL Mobility Ontology" ;
+                                                   <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                                                   owl:versionInfo "0.0.1" ;
+                                                   <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://auroral.iot.linkeddata.es/def/mobility#destinationDisplay
+:destinationDisplay rdf:type owl:ObjectProperty ;
+                    rdfs:domain :EstimatedCall ;
+                    rdfs:range <https://w3id.org/transmodel/journeys#DestinationDisplay> ;
+                    rdfs:comment "Relationship between the estimated call and the destination" ;
+                    rdfs:label "destination display" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#hasEstimatedCall
+:hasEstimatedCall rdf:type owl:ObjectProperty ;
+                  rdfs:domain :StopPoint ;
+                  rdfs:range :EstimatedCall ;
+                  rdfs:comment "Relationship between the stop point and its estimade calls" ;
+                  rdfs:label "has estimated call" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#hasLine
+:hasLine rdf:type owl:ObjectProperty ;
+         rdfs:domain <https://w3id.org/transmodel/journeys#JourneyPattern> ;
+         rdfs:range <https://w3id.org/transmodel/journeys#Line> ;
+         rdfs:comment "Relationship between journey pattern and the line" ;
+         rdfs:label "has line" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#hasQuay
+:hasQuay rdf:type owl:ObjectProperty ;
+         rdfs:domain :EstimatedCall ;
+         rdfs:range :Quay ;
+         rdfs:comment "Relationship between the estimated call and the quay" ;
+         rdfs:label "has quay" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#hasScheduledTime
+:hasScheduledTime rdf:type owl:ObjectProperty ;
+                  rdfs:domain :EstimatedCall ;
+                  rdfs:range :ScheduledTime ;
+                  rdfs:comment "Relationship between the scheduled time and the estimated call" ;
+                  rdfs:label "has scheduled time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#hasTransportMode
+:hasTransportMode rdf:type owl:ObjectProperty ;
+                  rdfs:domain <https://w3id.org/transmodel/journeys#Line> ;
+                  rdfs:range <https://w3id.org/transmodel/journeys#MeanOfTransport> ;
+                  rdfs:comment "Relationship between the mean of transport and the line" ;
+                  rdfs:label "has transport mode" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#journeyPattern
+:journeyPattern rdf:type owl:ObjectProperty ;
+                rdfs:domain :JourneyService ;
+                rdfs:range <https://w3id.org/transmodel/journeys#JourneyPattern> ;
+                rdfs:comment "Relationship between the  journey service and the journey pattern" ;
+                rdfs:label "journey pattern" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#journeyService
+:journeyService rdf:type owl:ObjectProperty ;
+                rdfs:domain :EstimatedCall ;
+                rdfs:range :JourneyService ;
+                rdfs:comment "Relationship between the journey service and the estimated calls" ;
+                rdfs:label "journey service" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://auroral.iot.linkeddata.es/def/mobility#actualArrivedTime
+:actualArrivedTime rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :ArrivalTime ;
+                   rdfs:range xsd:dateTime ;
+                   rdfs:comment "The actual arrived time of a mean of transport" ;
+                   rdfs:label "actual arrived time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#actualDepartureTime
+:actualDepartureTime rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :DepartureTime ;
+                     rdfs:range xsd:dateTime ;
+                     rdfs:comment "The actual departure time of a mean of transport" ;
+                     rdfs:label "actual departure time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#aimedArrivalTime
+:aimedArrivalTime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :ArrivalTime ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:comment "The aimed arrival time of a mean of transport" ;
+                  rdfs:label "aimed arrival time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#aimedDepartureTime
+:aimedDepartureTime rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :DepartureTime ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:comment "The aimde departure time of a mean of transport" ;
+                    rdfs:label "aimed departure time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#date
+:date rdf:type owl:DatatypeProperty ;
+      rdfs:domain :EstimatedCall ;
+      rdfs:range xsd:date ;
+      rdfs:comment "The date of the estimated call" ;
+      rdfs:label "date" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#expectedArrivalTime
+:expectedArrivalTime rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ArrivalTime ;
+                     rdfs:range xsd:dateTime ;
+                     rdfs:comment "The expected arrival time of a given mean of transport to a stop point" ;
+                     rdfs:label "expected arrival time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#expectedDepartureTime
+:expectedDepartureTime rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :DepartureTime ;
+                       rdfs:range xsd:dateTime ;
+                       rdfs:comment "The expected departure time of a given mean of transport to a stop point" ;
+                       rdfs:label "expected departure time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#forAlighting
+:forAlighting rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EstimatedCall ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "To dismount from a horse, descend from a vehicle, etc. to settle or stay after descending:" ;
+              rdfs:label "for alighting" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#forBoarding
+:forBoarding rdf:type owl:DatatypeProperty ;
+             rdfs:domain :EstimatedCall ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "The act of passengers and crew getting aboard a ship or aircraft" ;
+             rdfs:label "for boarding" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#idLine
+:idLine rdf:type owl:DatatypeProperty ;
+        rdfs:domain <https://w3id.org/transmodel/journeys#Line> ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The identifier of a line" ;
+        rdfs:label "id line" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#idQuay
+:idQuay rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Quay ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The identifier of a quay" ;
+        rdfs:label "id quay" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#idStopPoint
+:idStopPoint rdf:type owl:DatatypeProperty ;
+             rdfs:domain :StopPoint ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The identifier of a stop point" ;
+             rdfs:label "id stop point" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#nameLine
+:nameLine rdf:type owl:DatatypeProperty ;
+          rdfs:domain <https://w3id.org/transmodel/journeys#Line> ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The name of a line" ;
+          rdfs:label "name line" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#nameStopPoint
+:nameStopPoint rdf:type owl:DatatypeProperty ;
+               rdfs:domain :StopPoint ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The name of a stop point" ;
+               rdfs:label "name stop point" .
+
+
+###  https://w3id.org/transmodel/journeys#frontText
+<https://w3id.org/transmodel/journeys#frontText> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/transmodel/journeys#DestinationDisplay> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "The act of acting like you are somebody else" ;
+                                                 rdfs:label "front text" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.geonames.org/ontology#Feature
+<http://www.geonames.org/ontology#Feature> rdf:type owl:Class ;
+                                           rdfs:comment "Refers to a specific location" ;
+                                           rdfs:label "Feature" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#ArrivalTime
+:ArrivalTime rdf:type owl:Class ;
+             rdfs:subClassOf :ScheduledTime ;
+             rdfs:comment "Represents the scheduled arrival time for a stop point" ;
+             rdfs:label "Arrival Time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#DepartureTime
+:DepartureTime rdf:type owl:Class ;
+               rdfs:subClassOf :ScheduledTime ;
+               rdfs:comment "Represents the scheduled departure time for a stop point" ;
+               rdfs:label "Departure Time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#EstimatedCall
+:EstimatedCall rdf:type owl:Class ;
+               rdfs:comment "This class defines the estimated call of a bus or any mean of transport in a specific stop point" ;
+               rdfs:label "Estimated Call" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#JourneyService
+:JourneyService rdf:type owl:Class ;
+                rdfs:comment """A passenger carrying Mean Of Transport JOURNEY for one specified
+DAY TYPE. The pattern of working is in principle defined by a
+SERVICE JOURNEY PATTERN.""" ;
+                rdfs:label "Journey Service" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#Quay
+:Quay rdf:type owl:Class ;
+      rdfs:subClassOf <https://w3id.org/transmodel/journeys#Point> ;
+      rdfs:comment """A place such as platform, stance, or quayside where
+passengers have access to PT vehicles, Taxi, cars or other
+means of transportation. A QUAY may serve one or more
+VEHICLE STOPPING PLACEs and be associated with one or
+more SCHEDULED STOP POINTS. A QUAY may contain other
+sub QUAYs.""" ;
+      rdfs:label "Quay" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#ScheduledTime
+:ScheduledTime rdf:type owl:Class ;
+               rdfs:comment "Defines the scheduled time for a Stop point" ;
+               rdfs:label "Scheduled Time" .
+
+
+###  https://auroral.iot.linkeddata.es/def/mobility#StopPoint
+:StopPoint rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/transmodel/journeys#Point> ;
+           rdfs:comment "A POINT where passengers can board or alight from mean of transport" ;
+           rdfs:label "Stop Point" .
+
+
+###  https://w3id.org/transmodel/journeys#DestinationDisplay
+<https://w3id.org/transmodel/journeys#DestinationDisplay> rdf:type owl:Class ;
+                                                          rdfs:comment "An advertised destination of a specific Journey Pattern usually displayed on a headsign or other on-board locations" ;
+                                                          rdfs:label "Destination Display" .
+
+
+###  https://w3id.org/transmodel/journeys#JourneyPattern
+<https://w3id.org/transmodel/journeys#JourneyPattern> rdf:type owl:Class ;
+                                                      rdfs:comment """An ordered list of SCHEDULED STOP POINTs and TIMING
+POINTs on a single ROUTE, describing the pattern of working
+for public transport vehicles.A JOURNEY PATTERN may pass
+through the same POINT more than once. The first point of a
+JOURNEY PATTERN is the origin. The last point is the
+destination""" ;
+                                                      rdfs:label "Journey Pattern" .
+
+
+###  https://w3id.org/transmodel/journeys#Line
+<https://w3id.org/transmodel/journeys#Line> rdf:type owl:Class ;
+                                            rdfs:comment """A group of ROUTEs which is generally known to the public by
+a similar name or number.""" ;
+                                            rdfs:label "Line" .
+
+
+###  https://w3id.org/transmodel/journeys#MeanOfTransport
+<https://w3id.org/transmodel/journeys#MeanOfTransport> rdf:type owl:Class ;
+                                                       rdfs:comment "The means of transportation are bus, train, aeroplane, ship, car, etc while the mode of transportation refers to road, air, sea/ocean, etc." ;
+                                                       rdfs:label "Mean Of Transport" .
+
+
+###  https://w3id.org/transmodel/journeys#Point
+<https://w3id.org/transmodel/journeys#Point> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.geonames.org/ontology#Feature> ;
+                                             rdfs:comment "Presents the geospatial coordination of a given place" ;
+                                             rdfs:label "Point" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/transmodel/journeys#Bus
+<https://w3id.org/transmodel/journeys#Bus> rdf:type owl:NamedIndividual ,
+                                                    <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  https://w3id.org/transmodel/journeys#CableCar
+<https://w3id.org/transmodel/journeys#CableCar> rdf:type owl:NamedIndividual ,
+                                                         <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  https://w3id.org/transmodel/journeys#Ferry
+<https://w3id.org/transmodel/journeys#Ferry> rdf:type owl:NamedIndividual ,
+                                                      <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  https://w3id.org/transmodel/journeys#Funicular
+<https://w3id.org/transmodel/journeys#Funicular> rdf:type owl:NamedIndividual ,
+                                                          <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  https://w3id.org/transmodel/journeys#Gondola
+<https://w3id.org/transmodel/journeys#Gondola> rdf:type owl:NamedIndividual ,
+                                                        <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  https://w3id.org/transmodel/journeys#Metro
+<https://w3id.org/transmodel/journeys#Metro> rdf:type owl:NamedIndividual ,
+                                                      <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  https://w3id.org/transmodel/journeys#Rail
+<https://w3id.org/transmodel/journeys#Rail> rdf:type owl:NamedIndividual ,
+                                                     <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  https://w3id.org/transmodel/journeys#Tram
+<https://w3id.org/transmodel/journeys#Tram> rdf:type owl:NamedIndividual ,
+                                                     <https://w3id.org/transmodel/journeys#MeanOfTransport> .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
